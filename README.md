@@ -1,3 +1,12 @@
-# Getting_started_with_mlops
+# End to End ML deployment
 
--Collection of resources MLOps
+When it comes to ML deployment we can do so in so many ways. Some of them
+
+What do you need to deploy the application?
+In order to deploy any trained model, you need the following:
+
+- A trained model ready to deploy — save the model into a file to be further loaded and used by the web service.
+
+- A web service — that gives a purpose for your model to be used in practice. For our fuel consumption model, it can be using the vehicle configuration to predict its efficiency. We’ll use Flask to develop this service.
+
+- A cloud service provider — you need special cloud servers to deploy the application. For simplicity, we are going to use Heroku for this (I'll cover AWS and GCP in other articles).

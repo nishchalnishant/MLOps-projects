@@ -1,6 +1,14 @@
-\_ In this section we are going to create the model we are going to use
+- In this section our goal is to create the model we are going to use through out this repo.
 
-- For experimental purpose we will be using a bad model intially but wll use beeter models afterwards. The goal is to mimic the actual ML deployment .
+- We would start with a bad model then after some iteration we wolud improve our model performance and deploy the improved model.
+
+- Here we have use Tensorflow to create this NLP model but there are many other packages we can use to create ml models , such as SKlearn , Pytorch etc.
+
+- In addition to above packages we are also going to use the data analysis packages such as pandas , numpy and seaborn.
+
+Cheat sheet for -
+
+- Sklearn - https://whimsical.com/sklearn-LcpNYZXMZzGrDvVhyhDNCn
 
 #######################################
 #######################################

@@ -4,7 +4,7 @@ https://www.freecodecamp.org/news/deploy-your-machine-learning-models-for-free/
 
 # Model Deployment and challenges
 
-unique for each specific case, we will go over the most common cases pertaining to deployment.
+Unique for each specific case, we will go over the most common cases pertaining to deployment.
 
 Machine learning applications differ in nature compared to other typical
 software applications such as mobile applications in two main ways.

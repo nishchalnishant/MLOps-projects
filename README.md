@@ -1,8 +1,7 @@
 # End to End ML deployment
 
-When it comes to ML deployment we can do so in so many ways. Some of them
+When it comes to ML deployment we have many options.
 
-What do you need to deploy the application?
 In order to deploy any trained model, you need the following:
 
 - A trained model ready to deploy — save the model into a file to be further loaded and used by the web service.

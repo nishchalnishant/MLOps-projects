@@ -17,15 +17,25 @@ Model deployment can be seen as the last step in ML project lifecycle but is the
 
 Dependig on the use case the model deployment practices varies a lot.
 
-In this repository we will see deployment from smaller scale to larger scale .
+# Rest API --
 
-- we would start from deploying ml models using flask api on any PAAS provider . In ths case we are using heroku
+- we would start from deploying ml models using flask api on any PAAS provider . In ths case we are using heroku.
 
-- Then we will contanarize the same flask web but dockerize the entire application and run it on any PAAS provider here we are using heroku.
+- Then we can contanarize the same flask web but dockerize the entire application and run it on any PAAS provider here we are using heroku.
 
-- Then we will use the Container orchestrator to manage our containers . Athough there are many orchestrators we are going to use the Kuber netes and deploy it .
+- At the end we can use the Container orchestrators to manage our containers . Athough there are many orchestrators we are going to use the Kuber netes and deploy it .
 
-Different PAAS providers we can use --
+# Using javascript --
+
+- We can also just train our model using javascript and deploy it directly on the backend on the node js server or we can run ml model directly in our browser.
+
+- Using javascript and deploying it on NODEjs server is advantagious as we dont need any extra hardware and we can work with the existing solution .
+
+- Also as we can run our ml model directly on the desktop we can use the processing power of the user device , Also in this case the data from the user doesnt leave the uder.
+
+- The only disadvantage in deploying using the javascript on the frontend is that we can't deploy bigger models as it may take time to get downloaded into the user device which hampers the user experience
+
+# Different PAAS providers we can use --
 
 Algorithmia
 

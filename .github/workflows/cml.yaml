@@ -6,13 +6,18 @@ jobs:
     steps:      
       - uses: actions/checkout@v2       
       - uses: iterative/setup-cml@v1      
-      - uses: actions/setup-python@v2        
-        with:          python-version: '3.x'       
-        - name: cml        
-        env:          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+      - uses: actions/setup-python@v2
+        with: {python-version: '3.x'}
+        
+      - name: cml
+        env: REPO_TOKEN:${{ secrets.GITHUB_TOKEN }}
         run: |
-          pip3 install -r requirements.txt
-          python train.py
-          cat metrics.txt >> report.md
-          cml-publish confusion_matrix.png --md >> report.md
-          cml-send-comment report.md
+            pip3 install -r requirements.txt
+            python train.py
+
+            echo "## Model Metrics" > report.md
+            cat metrics.txt >> report.md
+
+            echo '## Model-predictions' > report.md
+            cml-publish confusion_matrix.png --md >> report.md
+            cml-send-comment report.md

@@ -18,7 +18,13 @@ We are starting with the predictions for the amount of air pollutants for all ai
 
 - Data
 
-Data is from CBCB website .
+# Data --
+
+- Data is from CBCB website .
+
+- We are storing the data into the repository intially.
+
+- later we are going to add a link to the data.
 
 # Timeline
 

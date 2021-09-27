@@ -25,3 +25,4 @@ Data is from CBCB website .
 - Starting with getting data for 4 major pollutants in Patna .
   - Got data from the CPCB website from 01/07/2020 to 25/08/2021.
   - As the data is less tan 100 MB we are storing it into our git repository, if the data exceeds then we will store the data on cloud and add a script to download the data data in 'get data.py'
+  - At first we are going to just take the avg of the last 5 predictions and predict the estimated [ this is going to be a trial for everything ]

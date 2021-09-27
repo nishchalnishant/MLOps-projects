@@ -1,0 +1,4 @@
+- Original data we got from the website is not ideal for ML modeling.
+- We are going to transform it as --
+  - impute the value as the value exactly 24 hours ago
+  -

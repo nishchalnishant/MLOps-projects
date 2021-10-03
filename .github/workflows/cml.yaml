@@ -7,14 +7,15 @@ jobs:
       - uses: actions/checkout@v2       
       - uses: iterative/setup-cml@v1      
       - uses: actions/setup-python@v2
-        with: {python-version: '3.x'}
-        env: ${{ secrets.GITHUB_TOKEN }}
-        
-      - name: cml
+      - with: {python-version: '3.x'}
+      - name: Train model
         run: |
-            pip3 install -r requirements.txt
-            python train.py
-
+          pip3 install -r requirements.txt
+          python train.py        
+      - name: cml report
+        env: 
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |         
             echo "## Model Metrics" > report.md
             cat metrics.csv >> report.md
 

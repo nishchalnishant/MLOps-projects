@@ -21,3 +21,4 @@ jobs:
             echo '## Model-predictions' > report.md
             cml-publish confusion_matrix.png --md >> report.md
             cml-send-comment report.md
+

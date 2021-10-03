@@ -2,20 +2,7 @@ import pandas as pd
 import numpy as np
 import os
 
-print(pd.__version__)
 
-print(np.__version__)
-
-### NO data
-
-
-### NO2 data
-
-
-### pm2.5 data
-
-
-### pm10 data
 def univariate_data(dataset, start_index, end_index, history_size, target_size):
   data = []
   labels = []
@@ -31,13 +18,24 @@ def univariate_data(dataset, start_index, end_index, history_size, target_size):
     labels.append(dataset[i+target_size])
   return np.array(data), np.array(labels)
 
+
+
+
+
 def create_time_steps(length):
   return list(range(-length, 0))
+
+
+
 
 def baseline(history):
   return np.mean(history)
 
+
+
+
 cities={}   # stores path for all the cities 
+cities_result={}
 
 # using the time series split tho chain the cross validation
 
@@ -46,20 +44,25 @@ cities={}   # stores path for all the cities
 for i in os.listdir('Data'):
     city_path=os.path.join('Data',i)
     cities[i]={}
+    cities_result[i]={}
     
     for j in os.listdir(city_path):
         city_pollutant=os.path.join(city_path,j)
         cities[i][j]={}
+        cities_result[i][j]={}
 
         for k in os.listdir(city_pollutant):
             stations=os.path.join(city_pollutant,k)
             cities[i][j][k]={}
+            cities_result[i][j][k]={}
 
             for l in os.listdir(stations):
                 #print(os.path.join(stations,l))
                 cities[i][j][k]=str(l)
 
-# looping over each csv file 
+
+
+# looping over each csv file to get the avg of past data and predict the future data 
     
 for i in cities.keys():  
     
@@ -95,12 +98,6 @@ for i in cities.keys():
 
             uni_data = uni_data.values
 
-            """
-            uni_train_mean = uni_data[:TRAIN_SPLIT].mean()
-            uni_train_std = uni_data[:TRAIN_SPLIT].std()
-
-            uni_data = (uni_data-uni_train_mean)/uni_train_std
-            """
 
             univariate_past_history = 5  # using values from last 5 entries 
             univariate_future_target = 0

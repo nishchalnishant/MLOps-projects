@@ -40,7 +40,7 @@ def baseline(history):
 cities={}   # stores path for all the cities 
 
 # using the time series split tho chain the cross validation
-from sklearn.model_selection import TimeSeriesSplit 
+
 
 
 for i in os.listdir('Data'):

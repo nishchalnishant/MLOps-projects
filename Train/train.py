@@ -66,7 +66,7 @@ for i in cities.keys():
             actual_result[i][j][k]=data_set.iloc[-1:][temp].mean()
 
 
-
+            #storing the result into a dataframe 
             result=result.append({
             'city':i,
             'pollutant':j,

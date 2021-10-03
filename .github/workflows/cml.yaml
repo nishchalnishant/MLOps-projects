@@ -8,6 +8,7 @@ jobs:
       - uses: iterative/setup-cml@v1      
       - uses: actions/setup-python@v2
         with: {python-version: '3.x'}
+        env: ${{ secrets.github.token }}
         
       - name: cml
         run: |

@@ -16,9 +16,5 @@ jobs:
             python train.py
 
             echo "## Model Metrics" > report.md
-            cat metrics.txt >> report.md
-
-            echo '## Model-predictions' > report.md
-            cml-publish confusion_matrix.png --md >> report.md
-            cml-send-comment report.md
+            cat metrics.csv >> report.md
 

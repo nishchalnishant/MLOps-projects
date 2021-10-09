@@ -40,7 +40,7 @@ for i in cities.keys():
         
         for k in cities[i][j].keys():
             
-            data_set=pd.read_csv((os.path.join('Data',i,j,k,cities[i][j][k])))
+            data_set=pd.read_csv((os.path.join('Data',i,j,k,cities[i][j][k ])))
 
             data_set['From date'] = pd.to_datetime(data_set['From date'])
 

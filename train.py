@@ -62,7 +62,8 @@ for i in (files):
             'so2_diff':(so2_predicted-so2_actual)},ignore_index=True)
 
 
-last_hour=result[['Station','co_predicted','no2_predicted','o3_predicted','pm10_predicted','pm25_predicted','so2_predicted']]
+
+last_hour=result[['Station','co_actual','no2_actual','o3_actual','pm10_actual','pm25_actual','so2_actual']]
     
 last_hour = last_hour.melt('Station', var_name='cols', value_name='vals')
 

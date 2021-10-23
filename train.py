@@ -61,21 +61,22 @@ for i in (files):
             'so2_actual':so2_actual,
             'so2_diff':(so2_predicted-so2_actual)},ignore_index=True)
 
+if(df.shape):
 
+    last_hour=result[['Station','co_actual','no2_actual','o3_actual','pm10_actual','pm25_actual','so2_actual']]
+        
+    last_hour = last_hour.melt('Station', var_name='cols', value_name='vals')
 
-last_hour=result[['Station','co_actual','no2_actual','o3_actual','pm10_actual','pm25_actual','so2_actual']]
-    
-last_hour = last_hour.melt('Station', var_name='cols', value_name='vals')
+    last_hour_graph = sns.catplot(x="Station", y="vals", hue='cols', data=last_hour, kind='point',height=5, aspect=11.7/8.27)
+        
+    last_hour_graph.savefig("last_hour.png")
 
-last_hour_graph = sns.catplot(x="Station", y="vals", hue='cols', data=last_hour, kind='point',height=5, aspect=11.7/8.27)
-    
-last_hour_graph.savefig("last_hour.png")
+    diff_df=result[['Station','co_diff','no2_diff','o3_differnce','pm10_diff','pm25_diff','so2_diff']]
 
-diff_df=result[['Station','co_diff','no2_diff','o3_differnce','pm10_diff','pm25_diff','so2_diff']]
+    diff_df = diff_df.melt('Station', var_name='cols', value_name='vals')
 
-diff_df = diff_df.melt('Station', var_name='cols', value_name='vals')
+    g = sns.catplot(x="Station", y="vals", hue='cols', data=diff_df, kind='point',height=5, aspect=11.7/8.27)
 
-g = sns.catplot(x="Station", y="vals", hue='cols', data=diff_df, kind='point',height=5, aspect=11.7/8.27)
-
-g.savefig("difference.png")
+    g.savefig("difference.png")
    
+

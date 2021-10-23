@@ -5,7 +5,7 @@ on:
 
 jobs:
   run:
-    runs-on: [ubuntu-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v2
@@ -24,5 +24,6 @@ jobs:
           python getting_data.py
           python train.py
 
-          cat metrics.csv >> report.md
+          cml publish difference.png --md >> report.md
+          cml publish last_hour.png --md >> report.md
           cml-send-comment report.md

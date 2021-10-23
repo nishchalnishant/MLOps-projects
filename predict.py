@@ -19,35 +19,35 @@ os.mkdir('Data')
 #requesting the samanpural file 
 r = requests.get(url_samanpura, allow_redirects=True)
 
-temp=open('Data\\samanpura.xlsx', 'wb')
+temp=open('Data/samanpura.xlsx', 'wb')
 temp.write(r.content)
 temp.close()
 
 #requesting the samanpural file 
 r = requests.get(url_drm_office, allow_redirects=True)
 
-temp=open('Data\\Drm_office.xlsx', 'wb')
+temp=open('Data/Drm_office.xlsx', 'wb')
 temp.write(r.content)
 temp.close()
 
 #requesting the samanpural file 
 r = requests.get(url_govt_high_school, allow_redirects=True)
 
-temp=open('Data\\govt_high_school.xlsx', 'wb')
+temp=open('Data/govt_high_school.xlsx', 'wb')
 temp.write(r.content)
 temp.close()
 
 #requesting the samanpural file 
 r = requests.get(url_muradapur, allow_redirects=True)
 
-temp=open('Data\\murdapur.xlsx', 'wb')
+temp=open('Data/murdapur.xlsx', 'wb')
 temp.write(r.content)
 temp.close()
 
 #requesting the samanpural file 
 r = requests.get(url_rajbansi_nagar, allow_redirects=True)
 
-temp=open('Data\\rajbansi_nagar.xlsx', 'wb')
+temp=open('Data/rajbansi_nagar.xlsx', 'wb')
 temp.write(r.content)
 temp.close()
 

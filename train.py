@@ -61,7 +61,7 @@ for i in (files):
             'so2_actual':so2_actual,
             'so2_diff':(so2_predicted-so2_actual)},ignore_index=True)
 
-    result.to_csv('performance.csv')
+result.to_csv('performance.csv')
 
 
     

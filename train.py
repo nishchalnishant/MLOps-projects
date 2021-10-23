@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import os
+import seaborn as sns
 
 
 """
@@ -9,8 +10,7 @@ we will loop through each xlsx file in the Data folder and try to predict the ne
 
 files=os.listdir('Data')
 
-result=pd.DataFrame(columns=[
-    'Station','co_predicted','co_actual','co_diff',
+result=pd.DataFrame(columns=['Station','co_predicted','co_actual','co_diff',
     'no2_predicted','no2_actual','no2_diff',
     'o3_predicted','o3_actual','o3_differnce',
     'pm10_predicted','pm10_actual','pm10_diff',
@@ -61,12 +61,20 @@ for i in (files):
             'so2_actual':so2_actual,
             'so2_diff':(so2_predicted-so2_actual)},ignore_index=True)
 
-result.to_csv('metrics.csv')
 
-
+last_hour=result[['Station','co_predicted','no2_predicted','o3_predicted','pm10_predicted','pm25_predicted','so2_predicted']]
     
+last_hour = last_hour.melt('Station', var_name='cols', value_name='vals')
 
-
-
+last_hour_graph = sns.catplot(x="Station", y="vals", hue='cols', data=last_hour, kind='point',height=5, aspect=11.7/8.27)
     
+last_hour_graph.savefig("last_hour.png")
+
+diff_df=result[['Station','co_diff','no2_diff','o3_differnce','pm10_diff','pm25_diff','so2_diff']]
+
+diff_df = diff_df.melt('Station', var_name='cols', value_name='vals')
+
+g = sns.catplot(x="Station", y="vals", hue='cols', data=diff_df, kind='point',height=5, aspect=11.7/8.27)
+
+g.savefig("difference.png")
    

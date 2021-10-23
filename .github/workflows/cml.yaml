@@ -21,8 +21,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip3 install -r requirements.txt
-          python train.py
-          python getting_data.py
+          python predict.py
 
           cml publish difference.png --md >> report.md
           cml publish last_hour.png --md >> report.md
